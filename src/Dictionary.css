@@ -8,6 +8,14 @@
   margin-top: 10px;
   padding: 40px;
 }
+.Dictionary label {
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px;
+  margin-bottom: 20px;
+  display: block;
+  line-height: 29px;
+}
 .Dictionary .btn {
   background-color: var(--branding-color);
   border-color: var(--branding-color);

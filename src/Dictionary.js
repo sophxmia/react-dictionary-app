@@ -7,7 +7,7 @@ export default function Dictionary() {
       <section>
         <form>
           <label>Welcome to the Dictionary? What is your search today?</label>
-          <div className="row my-3">
+          <div className="row my-2">
             <div className="col-sm-7">
               <input
                 type="search"
