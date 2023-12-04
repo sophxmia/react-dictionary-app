@@ -1,4 +1,9 @@
 :root {
+  --branding-color: #6c63ff;
+  --branding-color-hover: #564feb;
+  --box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  --heading-font: Arial, Helvetica, sans-serif;
+  --default-font: Georgia, "Times New Roman", Times, serif;
   --footer-font: monospace;
 }
 .App {

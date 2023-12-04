@@ -1,9 +1,18 @@
-:root {
-  --box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+.Dictionary h1 {
+  font-family: var(--heading-font);
 }
 .Dictionary section {
+  font-family: var(--default-font);
   box-shadow: var(--box-shadow);
   border-radius: 8px;
   margin-top: 10px;
   padding: 40px;
+}
+.Dictionary .btn {
+  background-color: var(--branding-color);
+  border-color: var(--branding-color);
+}
+.Dictionary .btn:hover {
+  background-color: var(--branding-color-hover);
+  border-color: var(--branding-color-hover);
 }

@@ -21,7 +21,7 @@ export default function Dictionary() {
             </div>
           </div>
         </form>
-        <small className="hint">Examples:coding, program, developer</small>
+        <small className="hint">Examples: coding, program, developer</small>
       </section>
     </div>
   );
