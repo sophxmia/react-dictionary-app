@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Result from "./Result";
 import "./Dictionary.css";
 
 export default function Dictionary(props) {
   const [word, setWord] = useState(props.defaultWord);
   const [loaded, setLoaded] = useState(false);
+  const [result, setResult] = useState(null);
 
   function load() {
     setLoaded(true);
@@ -13,6 +15,7 @@ export default function Dictionary(props) {
 
   function handleResponse(response) {
     console.log(response.data);
+    setResult(response.data);
   }
 
   function search() {
@@ -57,6 +60,7 @@ export default function Dictionary(props) {
           </form>
           <small className="hint">Examples: coding, program, developer</small>
         </section>
+        <Result result={result} />
       </div>
     );
   } else {
