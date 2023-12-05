@@ -18,7 +18,7 @@ function App() {
             Dictionary Application
           </h1>
         </header>
-        <Dictionary />
+        <Dictionary defaultWord="hello" />
         <footer className="mt-5">
           Open-sourse project,{" "}
           <a

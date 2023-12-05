@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Dictionary.css";
 
-export default function Dictionary() {
-  const [word, setWord] = useState();
+export default function Dictionary(props) {
+  const [word, setWord] = useState(props.defaultWord);
   const [loaded, setLoaded] = useState(false);
 
   function load() {
@@ -40,6 +40,7 @@ export default function Dictionary() {
                 <input
                   type="search"
                   placeholder="Enter your search..."
+                  defaultValue={props.defaultWord}
                   className="form-control mb-3"
                   autoFocus="on"
                   onChange={handleWordChange}
