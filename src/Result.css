@@ -1,0 +1,6 @@
+.Result h1 {
+  font-family: var(--default-font);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 43px;
+}
