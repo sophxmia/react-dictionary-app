@@ -22,7 +22,7 @@ function App() {
         <footer className="mt-5">
           Open-sourse project,{" "}
           <a
-            href="https://github.com/sophxmia/react-weather-forecast-app"
+            href="https://github.com/sophxmia/react-dictionary-app"
             target="_blank"
             rel="noreferrer"
             title="GitHub link"
@@ -34,7 +34,7 @@ function App() {
             href="https://brilliant-meerkat-d49135.netlify.app/"
             target="_blank"
             rel="noreferrer"
-            title="Netlify link to the project"
+            title="Netlify link to the portfolio"
           >
             Sofiia Maliarenko
           </a>

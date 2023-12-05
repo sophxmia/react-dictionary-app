@@ -1,28 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import "./Dictionary.css";
 
 export default function Dictionary() {
-  return (
-    <div className="Dictionary">
-      <section>
-        <form>
-          <label>Welcome to the Dictionary? What is your search today?</label>
-          <div className="row my-2">
-            <div className="col-sm-7">
-              <input
-                type="search"
-                placeholder="Enter your search..."
-                className="form-control mb-3"
-                autoFocus="on"
-              />
+  const [word, setWord] = useState();
+  const [loaded, setLoaded] = useState(false);
+
+  function load() {
+    setLoaded(true);
+    search();
+  }
+
+  function handleResponse(response) {
+    console.log(response.data);
+  }
+
+  function search() {
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleWordChange(event) {
+    setWord(event.target.value);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search(word);
+  }
+
+  if (loaded) {
+    return (
+      <div className="Dictionary">
+        <section>
+          <form onSubmit={handleSubmit}>
+            <label>Welcome to the Dictionary? What is your search today?</label>
+            <div className="row my-2">
+              <div className="col-sm-7">
+                <input
+                  type="search"
+                  placeholder="Enter your search..."
+                  className="form-control mb-3"
+                  autoFocus="on"
+                  onChange={handleWordChange}
+                />
+              </div>
+              <div className="col-sm-2 mb-1">
+                <input
+                  type="submit"
+                  value="Search"
+                  className="btn btn-primary"
+                />
+              </div>
             </div>
-            <div className="col-sm-2 mb-1">
-              <input type="submit" value="Search" className="btn btn-primary" />
-            </div>
-          </div>
-        </form>
-        <small className="hint">Examples: coding, program, developer</small>
-      </section>
-    </div>
-  );
+          </form>
+          <small className="hint">Examples: coding, program, developer</small>
+        </section>
+      </div>
+    );
+  } else {
+    load();
+    return "Loading...";
+  }
 }
