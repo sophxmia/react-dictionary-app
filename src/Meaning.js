@@ -14,7 +14,24 @@ export default function Meaning(props) {
             </p>
           );
         })}
-        <p></p>
+        <h3>Synonyms</h3>
+        {props.meaning.synonyms.map(function (synonyms, index) {
+          return (
+            <ul key={index}>
+              <li>{synonyms}</li>
+            </ul>
+          );
+        })}
+        <h3>Antonyms</h3>
+        {props.meaning.synonyms.map(function (antonyms, index) {
+          return (
+            <>
+              <ul key={index}>
+                <li>{antonyms}</li>
+              </ul>
+            </>
+          );
+        })}
       </div>
     );
   }
