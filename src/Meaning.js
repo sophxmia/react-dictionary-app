@@ -9,9 +9,9 @@ export default function Meaning(props) {
         <h3>{props.meaning.partOfSpeech}</h3>
         {props.meaning.definitions.map(function (definitions, index) {
           return (
-            <p key={index}>
+            <div key={index}>
               <Definition definitions={definitions} />
-            </p>
+            </div>
           );
         })}
         <h3>Synonyms</h3>
@@ -25,11 +25,11 @@ export default function Meaning(props) {
         <h3>Antonyms</h3>
         {props.meaning.synonyms.map(function (antonyms, index) {
           return (
-            <>
-              <ul key={index}>
+            <div key={index}>
+              <ul>
                 <li>{antonyms}</li>
               </ul>
-            </>
+            </div>
           );
         })}
       </div>

@@ -4,10 +4,14 @@ export default function Definition(props) {
   if (props.definitions) {
     return (
       <div className="Definition">
-        <p>{props.definitions.definition}</p>
-        <em>
-          <small>{props.definitions.example}</small>
-        </em>
+        <ul>
+          <li>{props.definitions.definition}</li>
+          <ol>
+            <em>
+              <small>{props.definitions.example}</small>
+            </em>
+          </ol>
+        </ul>
       </div>
     );
   } else {
