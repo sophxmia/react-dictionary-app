@@ -14,24 +14,32 @@ export default function Meaning(props) {
             </div>
           );
         })}
-        <h3>Synonyms</h3>
-        {props.meaning.synonyms.map(function (synonyms, index) {
-          return (
-            <ul key={index}>
-              <li>{synonyms}</li>
-            </ul>
-          );
-        })}
-        <h3>Antonyms</h3>
-        {props.meaning.synonyms.map(function (antonyms, index) {
-          return (
-            <div key={index}>
-              <ul>
-                <li>{antonyms}</li>
-              </ul>
-            </div>
-          );
-        })}
+        {props.meaning.synonyms && props.meaning.synonyms.length > 0 && (
+          <>
+            <h3>Synonyms</h3>
+            {props.meaning.synonyms.map(function (synonyms, index) {
+              return (
+                <ul key={index}>
+                  <li>{synonyms}</li>
+                </ul>
+              );
+            })}
+          </>
+        )}
+        {props.meaning.antonyms && props.meaning.antonyms.length > 0 && (
+          <>
+            <h3>Antonyms</h3>
+            {props.meaning.antonyms.map(function (antonyms, index) {
+              return (
+                <div key={index}>
+                  <ul>
+                    <li>{antonyms}</li>
+                  </ul>
+                </div>
+              );
+            })}
+          </>
+        )}
       </div>
     );
   }
