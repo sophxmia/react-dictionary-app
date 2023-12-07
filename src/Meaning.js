@@ -16,7 +16,7 @@ export default function Meaning(props) {
         })}
         {props.meaning.synonyms && props.meaning.synonyms.length > 0 && (
           <>
-            <h3>Synonyms</h3>
+            <h4>Synonyms</h4>
             {props.meaning.synonyms.map(function (synonyms, index) {
               return (
                 <ul key={index}>
@@ -28,7 +28,7 @@ export default function Meaning(props) {
         )}
         {props.meaning.antonyms && props.meaning.antonyms.length > 0 && (
           <>
-            <h3>Antonyms</h3>
+            <h4>Antonyms</h4>
             {props.meaning.antonyms.map(function (antonyms, index) {
               return (
                 <div key={index}>
