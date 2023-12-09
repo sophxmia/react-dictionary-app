@@ -7,7 +7,14 @@ export default function Result(props) {
   useEffect(() => {
     if (props.result) {
       const audioElement = document.getElementById("audioElement");
-      audioElement.src = `https://api.dictionaryapi.dev/media/pronunciations/en/${props.result[0].word}-uk.mp3`;
+      const word = props.result[0].word;
+
+      // Check if the UK pronunciation is available, otherwise use the US pronunciation
+      const ukPronunciationUrl = `https://api.dictionaryapi.dev/media/pronunciations/en/${word}-uk.mp3`;
+      const usPronunciationUrl = `https://api.dictionaryapi.dev/media/pronunciations/en/${word}-us.mp3`;
+
+      audioElement.src =
+        props.result[0].phonetics[0]?.audio || usPronunciationUrl;
     }
   }, [props.result]);
 
