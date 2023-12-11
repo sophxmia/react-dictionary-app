@@ -1,3 +1,9 @@
-li {
+.Meaning li {
   list-style: none;
+}
+.Meaning .synonyms {
+  line-height: 1;
+}
+.Meaning .antonyms {
+  line-height: 1;
 }
